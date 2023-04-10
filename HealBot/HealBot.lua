@@ -2460,27 +2460,6 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_FOUNTAIN_OF_LIGHT] = nil
     end
-    if hbClassHoTwatch[HEALBOT_guardians_hand] == 3 then
-        HealBot_Watch_HoT[HEALBOT_guardians_hand] = "A"
-    elseif hbClassHoTwatch[HEALBOT_guardians_hand] == 2 then
-        HealBot_Watch_HoT[HEALBOT_guardians_hand] = "C"
-    else
-        HealBot_Watch_HoT[HEALBOT_guardians_hand] = nil
-    end
-    if hbClassHoTwatch[HEALBOT_touch_of_the_titans] == 3 then
-        HealBot_Watch_HoT[HEALBOT_touch_of_the_titans] = "A"
-    elseif hbClassHoTwatch[HEALBOT_touch_of_the_titans] == 2 then
-        HealBot_Watch_HoT[HEALBOT_touch_of_the_titans] = "C"
-    else
-        HealBot_Watch_HoT[HEALBOT_touch_of_the_titans] = nil
-    end
-    if hbClassHoTwatch[HEALBOT_cover_of_light] == 3 then
-        HealBot_Watch_HoT[HEALBOT_cover_of_light] = "A"
-    elseif hbClassHoTwatch[HEALBOT_cover_of_light] == 2 then
-        HealBot_Watch_HoT[HEALBOT_cover_of_light] = "C"
-    else
-        HealBot_Watch_HoT[HEALBOT_cover_of_light] = nil
-    end
     if hbClassHoTwatch[HEALBOT_RESIDUAL_SHINE] == 3 then
         HealBot_Watch_HoT[HEALBOT_RESIDUAL_SHINE] = "A"
     elseif hbClassHoTwatch[HEALBOT_RESIDUAL_SHINE] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
@@ -2488,12 +2467,33 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_RESIDUAL_SHINE] = nil
     end
-    if hbClassHoTwatch[HEALBOT_Dar_Izeri] == 3 then
-        HealBot_Watch_HoT[HEALBOT_Dar_Izeri] = "A"
-    elseif hbClassHoTwatch[HEALBOT_Dar_Izeri] == 2 and class == HealBot_Class_En[HEALBOT_DRUID] then
-        HealBot_Watch_HoT[HEALBOT_Dar_Izeri] = "C"
+    if hbClassHoTwatch[HEALBOT_THE_GIFT_OF_ISERA] == 3 then
+        HealBot_Watch_HoT[HEALBOT_THE_GIFT_OF_ISERA] = "A"
+    elseif hbClassHoTwatch[HEALBOT_THE_GIFT_OF_ISERA] == 2 and class == HealBot_Class_En[HEALBOT_DRUID] then
+        HealBot_Watch_HoT[HEALBOT_THE_GIFT_OF_ISERA] = "C"
     else
-        HealBot_Watch_HoT[HEALBOT_Dar_Izeri] = nil
+        HealBot_Watch_HoT[HEALBOT_THE_GIFT_OF_ISERA] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_COVER_OF_LIGHT] == 3 then
+        HealBot_Watch_HoT[HEALBOT_COVER_OF_LIGHT] = "A"
+    elseif hbClassHoTwatch[HEALBOT_COVER_OF_LIGHT] == 2 then
+        HealBot_Watch_HoT[HEALBOT_COVER_OF_LIGHT] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_COVER_OF_LIGHT] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_TOUCH_OF_THE_TITANS] == 3 then
+        HealBot_Watch_HoT[HEALBOT_TOUCH_OF_THE_TITANS] = "A"
+    elseif hbClassHoTwatch[HEALBOT_TOUCH_OF_THE_TITANS] == 2 then
+        HealBot_Watch_HoT[HEALBOT_TOUCH_OF_THE_TITANS] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_TOUCH_OF_THE_TITANS] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_HAND_OF_THE_GUARDIANS] == 3 then
+        HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = "A"
+    elseif hbClassHoTwatch[HEALBOT_HAND_OF_THE_GUARDIANS] == 2 then
+        HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = nil
     end
 end
 

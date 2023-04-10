@@ -3601,10 +3601,6 @@ local HealBot_Options_Class_HoTctlName_List = {
     [HEALBOT_INSPIRATION] = HEALBOT_PRIEST,
     [HEALBOT_PROTANCIENTKINGS] = "ALL",
     [HEALBOT_FOUNTAIN_OF_LIGHT] = "ALL",
-    [HEALBOT_guardians_hand] = "ALL",
-    [HEALBOT_touch_of_the_titans] = "ALL",
-    [HEALBOT_cover_of_light] = "ALL",
-    [HEALBOT_Dar_Izeri] = HEALBOT_DRUID,
     [HEALBOT_RESIDUAL_SHINE] = HEALBOT_PALADIN,
     [HEALBOT_ANCESTRAL_FORTITUDE] = HEALBOT_SHAMAN,
     [HEALBOT_EARTHLIVING_WEAPON] = HEALBOT_SHAMAN,
@@ -3633,6 +3629,11 @@ local HealBot_Options_Class_HoTctlName_List = {
     [HEALBOT_CHAINHEALHOT] = HEALBOT_SHAMAN,
     [HEALBOT_TIDAL_WAVES] = HEALBOT_SHAMAN,
     [HEALBOT_TIDAL_FORCE] = HEALBOT_SHAMAN,
+    -------------------------------------------------------------------
+    [HEALBOT_THE_GIFT_OF_ISERA] = HEALBOT_DRUID,
+    [HEALBOT_COVER_OF_LIGHT] = "ALL",
+    [HEALBOT_TOUCH_OF_THE_TITANS] = "ALL",
+    [HEALBOT_HAND_OF_THE_GUARDIANS] = "ALL",
 }
 
 local HoTctlName_List = {}
