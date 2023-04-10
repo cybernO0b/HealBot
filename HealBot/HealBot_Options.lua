@@ -87,6 +87,7 @@ local HealBot_Buff_Spells_Total_List = {
         HEALBOT_GIFT_OF_THE_WILD,
         HEALBOT_THORNS,
         HEALBOT_OMEN_OF_CLARITY,
+        HEALBOT_THE_GIFT_OF_ISERA,
     },
     ["HUNT"] = {
         HEALBOT_A_MONKEY,
@@ -164,6 +165,7 @@ local HealBot_Buff_Spells_Total_List = {
         HEALBOT_PRAYER_OF_SHADOW_PROTECTION,
         HEALBOT_SHADOWFORM,
         HEALBOT_VAMPIRIC_EMBRACE,
+        HEALBOT_RENEWAL,
     },
     ["ROGU"] = {
     },

@@ -1752,6 +1752,7 @@ function HealBot_OnEvent_VariablesLoaded(self)
     HealBot_Vers[HealBot_PlayerName] = HEALBOT_VERSION
     HealBot_luVars["TargetUnitID"] = "player"
     if strsub(HealBot_PlayerClassEN, 1, 4) == HealBot_Class_En[HEALBOT_PRIEST] then
+        HealBot_ShortBuffs[HEALBOT_RENEWAL] = true
         HealBot_ShortBuffs[HEALBOT_SHADOW_PROTECTION] = true
         HealBot_ShortBuffs[HEALBOT_LEVITATE] = true
         HealBot_BuffNameSwap = {
@@ -1772,6 +1773,7 @@ function HealBot_OnEvent_VariablesLoaded(self)
         HealBot_Talents[HEALBOT_FOCUSED_POWER] = 0
     elseif strsub(HealBot_PlayerClassEN, 1, 4) == HealBot_Class_En[HEALBOT_DRUID] then
         HealBot_ShortBuffs[HEALBOT_THORNS] = true
+        HealBot_ShortBuffs[HEALBOT_THE_GIFT_OF_ISERA]=true
         HealBot_BuffNameSwap = {
             [HEALBOT_MARK_OF_THE_WILD] = HEALBOT_GIFT_OF_THE_WILD,
             [HEALBOT_GIFT_OF_THE_WILD] = HEALBOT_MARK_OF_THE_WILD
@@ -6379,7 +6381,7 @@ function HealBot_DoReset_Buffs(PlayerClassEN)
         HealBot_Config.HealBotBuffText = {
             [1] = HEALBOT_MARK_OF_THE_WILD,
             [2] = HEALBOT_THORNS,
-            [3] = HEALBOT_WORDS_NONE,
+            [3] = HEALBOT_THE_GIFT_OF_ISERA,
             [4] = HEALBOT_WORDS_NONE,
             [5] = HEALBOT_WORDS_NONE,
             [6] = HEALBOT_WORDS_NONE,
@@ -6419,7 +6421,7 @@ function HealBot_DoReset_Buffs(PlayerClassEN)
             [2] = HEALBOT_INNER_FIRE,
             [3] = HEALBOT_DIVINE_SPIRIT,
             [4] = HEALBOT_SHADOW_PROTECTION,
-            [5] = HEALBOT_WORDS_NONE,
+            [5] = HEALBOT_RENEWAL,
             [6] = HEALBOT_WORDS_NONE,
             [7] = HEALBOT_WORDS_NONE,
             [8] = HEALBOT_WORDS_NONE,
