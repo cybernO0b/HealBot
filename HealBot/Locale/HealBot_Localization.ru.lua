@@ -167,7 +167,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_guardians_hand                 = GetSpellInfo(313104);
     HEALBOT_touch_of_the_titans            = GetSpellInfo(313106);
     HEALBOT_cover_of_light                 = GetSpellInfo(319738);
-    HEALBOT_holy_pal_t6                    = GetSpellInfo(319540);
+    HEALBOT_RESIDUAL_SHINE                 = GetSpellInfo(319540) or "Остаточное сияние (т6)";
     HEALBOT_Dar_Izeri                      = GetSpellInfo(308090);
 
     HEALBOT_BEACON_OF_LIGHT                = GetSpellInfo(53563) or "Частица света";

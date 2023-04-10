@@ -2481,12 +2481,12 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_cover_of_light] = nil
     end
-    if hbClassHoTwatch[HEALBOT_holy_pal_t6] == 3 then
-        HealBot_Watch_HoT[HEALBOT_holy_pal_t6] = "A"
-    elseif hbClassHoTwatch[HEALBOT_holy_pal_t6] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
-        HealBot_Watch_HoT[HEALBOT_holy_pal_t6] = "C"
+    if hbClassHoTwatch[HEALBOT_RESIDUAL_SHINE] == 3 then
+        HealBot_Watch_HoT[HEALBOT_RESIDUAL_SHINE] = "A"
+    elseif hbClassHoTwatch[HEALBOT_RESIDUAL_SHINE] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
+        HealBot_Watch_HoT[HEALBOT_RESIDUAL_SHINE] = "C"
     else
-        HealBot_Watch_HoT[HEALBOT_holy_pal_t6] = nil
+        HealBot_Watch_HoT[HEALBOT_RESIDUAL_SHINE] = nil
     end
     if hbClassHoTwatch[HEALBOT_Dar_Izeri] == 3 then
         HealBot_Watch_HoT[HEALBOT_Dar_Izeri] = "A"
