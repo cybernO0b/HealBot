@@ -19,6 +19,14 @@ if (GetLocale() == "ruRU") then
     HEALBOT_WARRIOR                        = "Воин";
     HEALBOT_DEATHKNIGHT                    = "Рыцарь cмерти";
 
+
+    HEALBOT_HAND_OF_THE_GUARDIANS          = GetSpellInfo(313104) or "Длань Хранителя";
+    HEALBOT_TOUCH_OF_THE_TITANS            = GetSpellInfo(313106) or "Касание Титанов";
+    HEALBOT_COVER_OF_LIGHT                 = GetSpellInfo(319738) or "Покров света";
+    HEALBOT_RESIDUAL_SHINE                 = GetSpellInfo(319540) or "Остаточное сияние (т6)";
+    HEALBOT_THE_GIFT_OF_ISERA              = GetSpellInfo(308090) or "Дар Изеры";
+
+
     HEALBOT_SILK_BANDAGE                   = GetItemInfo(6450) or "Шелковые бинты";
     HEALBOT_HEAVY_SILK_BANDAGE             = GetItemInfo(6451) or "Плотные шелковые бинты";
     HEALBOT_MAGEWEAVE_BANDAGE              = GetItemInfo(8544) or "Бинты из магической ткани";
@@ -75,7 +83,6 @@ if (GetLocale() == "ruRU") then
     HEALBOT_REVIVE                         = GetSpellInfo(50769) or "Оживление";
     HEALBOT_TRANQUILITY                    = GetSpellInfo(740) or "Спокойствие";
     HEALBOT_SWIFTMEND                      = GetSpellInfo(18562) or "Быстрое восстановление";
-    HEALBOT_Dar_Izeri                      = GetSpellInfo(308090);
     HEALBOT_LIVING_SEED                    = GetSpellInfo(48496);
     HEALBOT_PRAYER_OF_HEALING              = GetSpellInfo(596) or "Молитва исцеления";
     HEALBOT_CHAIN_HEAL                     = GetSpellInfo(1064) or "Цепное исцеление";
@@ -164,11 +171,6 @@ if (GetLocale() == "ruRU") then
     HEALBOT_GIFT_OF_THE_WILD               = GetSpellInfo(21849) or "Дар дикой природы";
     HEALBOT_THORNS                         = GetSpellInfo(467) or "Шипы";
     HEALBOT_OMEN_OF_CLARITY                = GetSpellInfo(16864) or "Знамение ясности";
-    HEALBOT_guardians_hand                 = GetSpellInfo(313104);
-    HEALBOT_touch_of_the_titans            = GetSpellInfo(313106);
-    HEALBOT_cover_of_light                 = GetSpellInfo(319738);
-    HEALBOT_RESIDUAL_SHINE                 = GetSpellInfo(319540) or "Остаточное сияние (т6)";
-    HEALBOT_Dar_Izeri                      = GetSpellInfo(308090);
 
     HEALBOT_BEACON_OF_LIGHT                = GetSpellInfo(53563) or "Частица света";
     HEALBOT_LIGHT_BEACON                   = GetSpellInfo(53651);
