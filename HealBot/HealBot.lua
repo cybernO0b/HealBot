@@ -2495,6 +2495,69 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = nil
     end
+    if hbClassHoTwatch[HEALBOT_FLOWERING_PERIOD] == 3 then
+        HealBot_Watch_HoT[HEALBOT_FLOWERING_PERIOD] = "A"
+    elseif hbClassHoTwatch[HEALBOT_FLOWERING_PERIOD] == 2 and class == HealBot_Class_En[HEALBOT_DRUID] then
+        HealBot_Watch_HoT[HEALBOT_FLOWERING_PERIOD] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_FLOWERING_PERIOD] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_DIVINE_HAND] == 3 then
+        HealBot_Watch_HoT[HEALBOT_DIVINE_HAND] = "A"
+    elseif hbClassHoTwatch[HEALBOT_DIVINE_HAND] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
+        HealBot_Watch_HoT[HEALBOT_DIVINE_HAND] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_DIVINE_HAND] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_BLOSSOMING] == 3 then
+        HealBot_Watch_HoT[HEALBOT_BLOSSOMING] = "A"
+    elseif hbClassHoTwatch[HEALBOT_BLOSSOMING] == 2 and class == HealBot_Class_En[HEALBOT_DRUID] then
+        HealBot_Watch_HoT[HEALBOT_BLOSSOMING] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_BLOSSOMING] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_RENEWAL] == 3 then
+        HealBot_Watch_HoT[HEALBOT_RENEWAL] = "A"
+    elseif hbClassHoTwatch[HEALBOT_RENEWAL] == 2 and class == HealBot_Class_En[HEALBOT_PRIEST] then
+        HealBot_Watch_HoT[HEALBOT_RENEWAL] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_RENEWAL] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_AURA_MASTER] == 3 then
+        HealBot_Watch_HoT[HEALBOT_AURA_MASTER] = "A"
+    elseif hbClassHoTwatch[HEALBOT_AURA_MASTER] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
+        HealBot_Watch_HoT[HEALBOT_AURA_MASTER] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_AURA_MASTER] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_DIVINE_GUARDIAN] == 3 then
+        HealBot_Watch_HoT[HEALBOT_DIVINE_GUARDIAN] = "A"
+    elseif hbClassHoTwatch[HEALBOT_DIVINE_GUARDIAN] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
+        HealBot_Watch_HoT[HEALBOT_DIVINE_GUARDIAN] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_DIVINE_GUARDIAN] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_SACRED_SACRIFICE] == 3 then
+        HealBot_Watch_HoT[HEALBOT_SACRED_SACRIFICE] = "A"
+    elseif hbClassHoTwatch[HEALBOT_SACRED_SACRIFICE] == 2 and class == HealBot_Class_En[HEALBOT_PALADIN] then
+        HealBot_Watch_HoT[HEALBOT_SACRED_SACRIFICE] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_SACRED_SACRIFICE] = nil
+    end
+    if hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 3 then
+        HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "A"
+    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 then
+        HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = nil
+    end
+    -- if hbClassHoTwatch[HEALBOT_HEALING_RAIN] == 3 then
+    --     HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "A"
+    -- elseif hbClassHoTwatch[HEALBOT_HEALING_RAIN] == 2 and class == HealBot_Class_En[HEALBOT_SHAMAN] then
+    --     HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "C"
+    -- else
+    --     HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = nil
+    -- end  
 end
 
 function HealBot_Register_Events()

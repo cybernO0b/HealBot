@@ -19,13 +19,27 @@ if (GetLocale() == "ruRU") then
     HEALBOT_WARRIOR                        = "Воин";
     HEALBOT_DEATHKNIGHT                    = "Рыцарь cмерти";
 
+    --ITEMS--
 
     HEALBOT_HAND_OF_THE_GUARDIANS          = GetSpellInfo(313104) or "Длань Хранителя";
     HEALBOT_TOUCH_OF_THE_TITANS            = GetSpellInfo(313106) or "Касание Титанов";
-    HEALBOT_COVER_OF_LIGHT                 = GetSpellInfo(319738) or "Покров света";
-    HEALBOT_RESIDUAL_SHINE                 = GetSpellInfo(319540) or "Остаточное сияние (т6)";
-    HEALBOT_THE_GIFT_OF_ISERA              = GetSpellInfo(308090) or "Дар Изеры";
+    HEALBOT_ACCESSORY_HEALING              = GetSpellInfo(311060) or "Целительное зелье";
 
+    --NEW_SPELLS--
+    
+    HEALBOT_COVER_OF_LIGHT                 = GetSpellInfo(319738) or "Покров света";
+    HEALBOT_RESIDUAL_SHINE                 = GetSpellInfo(319540) or "Остаточное сияние (T6)";
+    HEALBOT_THE_GIFT_OF_ISERA              = GetSpellInfo(308090) or "Дар Изеры";
+    HEALBOT_FLOWERING_PERIOD               = GetSpellInfo(308093) or "Период цветения";
+    HEALBOT_DIVINE_HAND                    = GetSpellInfo(319166) or "Божья длань";
+    HEALBOT_BLOSSOMING                     = GetSpellInfo(308094) or "Расцвет";
+    HEALBOT_RENEWAL                        = GetSpellInfo(305081) or "Обновление (Т4)";
+    HEALBOT_AURA_MASTER                    = GetSpellInfo(31821)  or "Мастер аур";
+    HEALBOT_DIVINE_GUARDIAN                = GetSpellInfo(70940)  or "Божественный страж";
+    HEALBOT_SACRED_SACRIFICE               = GetSpellInfo(64205)  or "Священная жертва";
+    -- HEALBOT_HEALING_RAIN                   = GetSpellInfo(308017) or "Целительный Ливень";
+
+    --STANDART_SPELLS--
 
     HEALBOT_SILK_BANDAGE                   = GetItemInfo(6450) or "Шелковые бинты";
     HEALBOT_HEAVY_SILK_BANDAGE             = GetItemInfo(6451) or "Плотные шелковые бинты";
