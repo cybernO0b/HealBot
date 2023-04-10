@@ -2548,7 +2548,7 @@ function HealBot_configClassHoT(class, race)
     end
     if hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 3 then
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "A"
-    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 then
+    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 and class = HealBot_Class_En[HEALBOT_NEW_ITEMS] then 
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = nil
