@@ -2553,13 +2553,13 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = nil
     end
-    -- if hbClassHoTwatch[HEALBOT_HEALING_RAIN] == 3 then
-    --     HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "A"
-    -- elseif hbClassHoTwatch[HEALBOT_HEALING_RAIN] == 2 and class == HealBot_Class_En[HEALBOT_SHAMAN] then
-    --     HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "C"
-    -- else
-    --     HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = nil
-    -- end  
+    if hbClassHoTwatch[HEALBOT_HEALING_RAIN] == 3 then
+        HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "A"
+    elseif hbClassHoTwatch[HEALBOT_HEALING_RAIN] == 2 and class == HealBot_Class_En[HEALBOT_SHAMAN] then
+        HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = nil
+    end  
 end
 
 function HealBot_Register_Events()
