@@ -303,11 +303,10 @@ function HealBot_Action_SetrSpell()
     HealBot_dSpell=HealBot_GetBandageType()
     HealBot_rSpell=HealBot_GetBandageType()
     if strsub(HealBot_PlayerClassEN,1,4)=="DRUI" then
-        HealBot_hSpell=HEALBOT_REJUVENATION         -- h - heal         --
-        HealBot_bSpell=HEALBOT_MARK_OF_THE_WILD     -- b - buff         --
-        HealBot_bSpell=HEALBOT_THE_GIFT_OF_ISERA    
-        HealBot_dSpell=HEALBOT_CURE_POISON          -- d - decurse      --
-        HealBot_rSpell=HEALBOT_REVIVE               -- r - restoration  --
+        HealBot_hSpell=HEALBOT_REJUVENATION
+        HealBot_bSpell=HEALBOT_MARK_OF_THE_WILD
+        HealBot_dSpell=HEALBOT_CURE_POISON      
+        HealBot_rSpell=HEALBOT_REVIVE        
     elseif strsub(HealBot_PlayerClassEN,1,4)=="HUNT" then
         HealBot_hSpell=HEALBOT_MENDPET
     elseif strsub(HealBot_PlayerClassEN,1,4)=="MAGE" then
@@ -320,7 +319,6 @@ function HealBot_Action_SetrSpell()
         HealBot_rSpell=HEALBOT_REDEMPTION
     elseif strsub(HealBot_PlayerClassEN,1,4)=="PRIE" then
         HealBot_hSpell=HEALBOT_LESSER_HEAL
-        HealBot_hSpell=HEALBOT_RENEWAL
         HealBot_bSpell=HEALBOT_POWER_WORD_FORTITUDE
         HealBot_dSpell=HEALBOT_CURE_DISEASE
         HealBot_rSpell=HEALBOT_RESURRECTION
