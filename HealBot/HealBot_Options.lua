@@ -3636,8 +3636,8 @@ local HealBot_Options_Class_HoTctlName_List = {
     [HEALBOT_FLOWERING_PERIOD] = HEALBOT_DRUID,
     [HEALBOT_BLOSSOMING] = HEALBOT_DRUID,
     [HEALBOT_COVER_OF_LIGHT] = "ALL",
-    [HEALBOT_TOUCH_OF_THE_TITANS] = "ALL",
-    [HEALBOT_HAND_OF_THE_GUARDIANS] = "ALL",
+    [HEALBOT_TOUCH_OF_THE_TITANS] = HEALBOT_NEW_ITEMS,
+    [HEALBOT_HAND_OF_THE_GUARDIANS] = HEALBOT_NEW_ITEMS,
     [HEALBOT_ACCESSORY_HEALING] = HEALBOT_NEW_ITEMS,
     [HEALBOT_RENEWAL] = HEALBOT_PRIEST,
     [HEALBOT_DIVINE_HAND] = HEALBOT_PALADIN,
@@ -3653,11 +3653,15 @@ function HealBot_Options_Class_HoTctlName_genList()
         HoTctlName_List[x] = nil;
     end
     for bName, class in pairs(HealBot_Options_Class_HoTctlName_List) do
-        if class == "ALL" or HealBot_Options_StorePrev["FilterHoTctlName"] == class then
+        if class == "ALL" then
+            if not (HealBot_Options_StorePrev["FilterHoTctlName"] == HEALBOT_NEW_ITEMS) then
+               table.insert(HoTctlName_List, bName)
+            end
+         elseif HealBot_Options_StorePrev["FilterHoTctlName"] == class then
             table.insert(HoTctlName_List, bName)
-        elseif bName == HEALBOT_NATURE_SWIFTNESS and HealBot_Options_StorePrev["FilterHoTctlName"] == HEALBOT_SHAMAN then -- patch in the Shaman
+         elseif bName == HEALBOT_NATURE_SWIFTNESS and HealBot_Options_StorePrev["FilterHoTctlName"] == HEALBOT_SHAMAN then -- patch in the Shaman
             table.insert(HoTctlName_List, bName)
-        end
+         end
     end
     table.sort(HoTctlName_List)
     x = nil

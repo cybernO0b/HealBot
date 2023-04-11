@@ -18,7 +18,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_WARLOCK                        = "Чернокнижник";
     HEALBOT_WARRIOR                        = "Воин";
     HEALBOT_DEATHKNIGHT                    = "Рыцарь cмерти";
-    HEALBOT_NEW_ITEMS                      = "ИТЕМЫ";
+    HEALBOT_NEW_ITEMS                      = "Предметы";
 
     --ITEMS--
 
