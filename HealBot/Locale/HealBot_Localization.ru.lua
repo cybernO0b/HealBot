@@ -18,6 +18,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_WARLOCK                        = "Чернокнижник";
     HEALBOT_WARRIOR                        = "Воин";
     HEALBOT_DEATHKNIGHT                    = "Рыцарь cмерти";
+    HEALBOT_NEW_ITEMS                      = "Предметы";
 
     --ITEMS--
 
@@ -38,6 +39,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_DIVINE_GUARDIAN                = GetSpellInfo(70940)  or "Божественный страж";
     HEALBOT_SACRED_SACRIFICE               = GetSpellInfo(64205)  or "Священная жертва";
     HEALBOT_HEALING_RAIN                   = GetSpellInfo(308017) or "Целительный Ливень";
+    HEALBOT_PRIMEVAL_MOISTURE              = GetSpellInfo(308015) or "Первозданная влага";
 
     --STANDART_SPELLS--
 
