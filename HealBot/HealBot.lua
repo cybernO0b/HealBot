@@ -2559,7 +2559,14 @@ function HealBot_configClassHoT(class, race)
         HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = nil
-    end  
+    end
+    if hbClassHoTwatch[HEALBOT_PRIMEVAL_MOISTURE] == 3 then
+        HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = "A"
+    elseif hbClassHoTwatch[HEALBOT_PRIMEVAL_MOISTURE] == 2 and class == HealBot_Class_En[HEALBOT_SHAMAN] then
+        HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = nil
+    end
 end
 
 function HealBot_Register_Events()
