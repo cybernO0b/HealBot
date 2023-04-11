@@ -305,8 +305,8 @@ function HealBot_Action_SetrSpell()
     if strsub(HealBot_PlayerClassEN,1,4)=="DRUI" then
         HealBot_hSpell=HEALBOT_REJUVENATION
         HealBot_bSpell=HEALBOT_MARK_OF_THE_WILD
-        HealBot_dSpell=HEALBOT_CURE_POISON
-        HealBot_rSpell=HEALBOT_REVIVE
+        HealBot_dSpell=HEALBOT_CURE_POISON      
+        HealBot_rSpell=HEALBOT_REVIVE        
     elseif strsub(HealBot_PlayerClassEN,1,4)=="HUNT" then
         HealBot_hSpell=HEALBOT_MENDPET
     elseif strsub(HealBot_PlayerClassEN,1,4)=="MAGE" then

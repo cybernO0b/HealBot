@@ -87,6 +87,7 @@ local HealBot_Buff_Spells_Total_List = {
         HEALBOT_GIFT_OF_THE_WILD,
         HEALBOT_THORNS,
         HEALBOT_OMEN_OF_CLARITY,
+        HEALBOT_THE_GIFT_OF_ISERA,
     },
     ["HUNT"] = {
         HEALBOT_A_MONKEY,
@@ -164,6 +165,7 @@ local HealBot_Buff_Spells_Total_List = {
         HEALBOT_PRAYER_OF_SHADOW_PROTECTION,
         HEALBOT_SHADOWFORM,
         HEALBOT_VAMPIRIC_EMBRACE,
+        HEALBOT_RENEWAL,
     },
     ["ROGU"] = {
     },
@@ -3601,11 +3603,7 @@ local HealBot_Options_Class_HoTctlName_List = {
     [HEALBOT_INSPIRATION] = HEALBOT_PRIEST,
     [HEALBOT_PROTANCIENTKINGS] = "ALL",
     [HEALBOT_FOUNTAIN_OF_LIGHT] = "ALL",
-    [HEALBOT_guardians_hand] = "ALL",
-    [HEALBOT_touch_of_the_titans] = "ALL",
-    [HEALBOT_cover_of_light] = "ALL",
-    [HEALBOT_Dar_Izeri] = HEALBOT_DRUID,
-    [HEALBOT_holy_pal_t6] = HEALBOT_PALADIN,
+    [HEALBOT_RESIDUAL_SHINE] = HEALBOT_PALADIN,
     [HEALBOT_ANCESTRAL_FORTITUDE] = HEALBOT_SHAMAN,
     [HEALBOT_EARTHLIVING_WEAPON] = HEALBOT_SHAMAN,
     [HEALBOT_EARTH_SHIELD] = HEALBOT_SHAMAN,
@@ -3633,6 +3631,21 @@ local HealBot_Options_Class_HoTctlName_List = {
     [HEALBOT_CHAINHEALHOT] = HEALBOT_SHAMAN,
     [HEALBOT_TIDAL_WAVES] = HEALBOT_SHAMAN,
     [HEALBOT_TIDAL_FORCE] = HEALBOT_SHAMAN,
+    -------------------------------------------------------------------
+    [HEALBOT_THE_GIFT_OF_ISERA] = HEALBOT_DRUID,
+    [HEALBOT_FLOWERING_PERIOD] = HEALBOT_DRUID,
+    [HEALBOT_BLOSSOMING] = HEALBOT_DRUID,
+    [HEALBOT_COVER_OF_LIGHT] = "ALL",
+    [HEALBOT_TOUCH_OF_THE_TITANS] = HEALBOT_NEW_ITEMS,
+    [HEALBOT_HAND_OF_THE_GUARDIANS] = HEALBOT_NEW_ITEMS,
+    [HEALBOT_ACCESSORY_HEALING] = HEALBOT_NEW_ITEMS,
+    [HEALBOT_RENEWAL] = HEALBOT_PRIEST,
+    [HEALBOT_DIVINE_HAND] = HEALBOT_PALADIN,
+    [HEALBOT_AURA_MASTER] = HEALBOT_PALADIN,
+    [HEALBOT_DIVINE_GUARDIAN] = HEALBOT_PALADIN,
+    [HEALBOT_SACRED_SACRIFICE] = HEALBOT_PALADIN,
+    [HEALBOT_HEALING_RAIN] = HEALBOT_SHAMAN,
+    [HEALBOT_PRIMEVAL_MOISTURE] = HEALBOT_SHAMAN,
 }
 
 local HoTctlName_List = {}
@@ -3641,11 +3654,15 @@ function HealBot_Options_Class_HoTctlName_genList()
         HoTctlName_List[x] = nil;
     end
     for bName, class in pairs(HealBot_Options_Class_HoTctlName_List) do
-        if class == "ALL" or HealBot_Options_StorePrev["FilterHoTctlName"] == class then
+        if class == "ALL" then
+            if not (HealBot_Options_StorePrev["FilterHoTctlName"] == HEALBOT_NEW_ITEMS) then
+               table.insert(HoTctlName_List, bName)
+            end
+         elseif HealBot_Options_StorePrev["FilterHoTctlName"] == class then
             table.insert(HoTctlName_List, bName)
-        elseif bName == HEALBOT_NATURE_SWIFTNESS and HealBot_Options_StorePrev["FilterHoTctlName"] == HEALBOT_SHAMAN then -- patch in the Shaman
+         elseif bName == HEALBOT_NATURE_SWIFTNESS and HealBot_Options_StorePrev["FilterHoTctlName"] == HEALBOT_SHAMAN then -- patch in the Shaman
             table.insert(HoTctlName_List, bName)
-        end
+         end
     end
     table.sort(HoTctlName_List)
     x = nil
@@ -3750,6 +3767,7 @@ local HealBot_Options_FilterHoTctl_List = {
     HEALBOT_MAGE,
     HEALBOT_ROGUE,
     HEALBOT_WARLOCK,
+    HEALBOT_NEW_ITEMS,
 }
 
 HealBot_Options_StorePrev["FilterHoTctlID"] = 1
