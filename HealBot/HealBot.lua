@@ -2485,14 +2485,14 @@ function HealBot_configClassHoT(class, race)
     end
     if hbClassHoTwatch[HEALBOT_TOUCH_OF_THE_TITANS] == 3 then
         HealBot_Watch_HoT[HEALBOT_TOUCH_OF_THE_TITANS] = "A"
-    elseif hbClassHoTwatch[HEALBOT_TOUCH_OF_THE_TITANS] == 2 then
+    elseif hbClassHoTwatch[HEALBOT_TOUCH_OF_THE_TITANS] == 2 and class == HealBot_Class_En[HEALBOT_NEW_ITEMS] then
         HealBot_Watch_HoT[HEALBOT_TOUCH_OF_THE_TITANS] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_TOUCH_OF_THE_TITANS] = nil
     end
     if hbClassHoTwatch[HEALBOT_HAND_OF_THE_GUARDIANS] == 3 then
         HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = "A"
-    elseif hbClassHoTwatch[HEALBOT_HAND_OF_THE_GUARDIANS] == 2 then
+    elseif hbClassHoTwatch[HEALBOT_HAND_OF_THE_GUARDIANS] == 2 and class == HealBot_Class_En[HEALBOT_NEW_ITEMS] then
         HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_HAND_OF_THE_GUARDIANS] = nil
@@ -2548,7 +2548,7 @@ function HealBot_configClassHoT(class, race)
     end
     if hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 3 then
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "A"
-    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 then
+    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 and class == HealBot_Class_En[HEALBOT_NEW_ITEMS] then 
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = nil
