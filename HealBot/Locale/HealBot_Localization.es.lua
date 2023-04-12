@@ -3,14 +3,14 @@ if (GetLocale() == "esES") then
 
 ---------------------------------------------
 -- SPANISH
--- TRADUCIDO POR Kâs (Stress - EU-Exodar)
+-- TRADUCIDO POR Kï¿½s (Stress - EU-Exodar)
 -- 3.3.3.1
--- á = \195\161
--- é = \195\169    
--- í = \195\173
--- ó = \195\179
--- ú = \195\186
--- ñ = \195\177
+-- ï¿½ = \195\161
+-- ï¿½ = \195\169    
+-- ï¿½ = \195\173
+-- ï¿½ = \195\179
+-- ï¿½ = \195\186
+-- ï¿½ = \195\177
 -- (http://www.wowwiki.com/Localizing_an_addon)
 -------------
 
@@ -748,7 +748,7 @@ HEALBOT_OPTIONS_BUTTONSHARESKIN     = "Compartir con"
 
 HEALBOT_CHAT_ADDONID                = "[HealBot]  "
 HEALBOT_CHAT_NEWVERSION1            = "Hay disponible nueva versi\195\179n"
-HEALBOT_CHAT_NEWVERSION2            = "en http://healbot.alturl.com"
+HEALBOT_CHAT_NEWVERSION2            = "en https://discord.gg/addonsforsirus"
 HEALBOT_CHAT_SHARESKINERR1          = " Skin no encontrada para Compartir"
 HEALBOT_CHAT_SHARESKINERR2          = " su versi\195\179n de HealBot es antigua para Compartir"
 HEALBOT_CHAT_SHARESKINERR3          = " no encontrado para compartir Skin"
