@@ -1,4 +1,4 @@
-HEALBOT_VERSION = "3.3.5.4";
+HEALBOT_VERSION = "3.3.5.5";
 HealBotSkinVersion = 17;
 
 -------------
@@ -878,7 +878,7 @@ HEALBOT_OPTIONS_BUTTONSHARESKIN         = "Share with"
 
 HEALBOT_CHAT_ADDONID                    = "[HealBot]  "
 HEALBOT_CHAT_NEWVERSION1                = "A newer version is available"
-HEALBOT_CHAT_NEWVERSION2                = "at http://healbot.alturl.com"
+HEALBOT_CHAT_NEWVERSION2                = "at https://discord.gg/addonsforsirus"
 HEALBOT_CHAT_SHARESKINERR1              = " Skin not found for Sharing"
 HEALBOT_CHAT_SHARESKINERR2              = "'s HealBot version is too old for Skin Sharing"
 HEALBOT_CHAT_SHARESKINERR3              = " not found for Skin Sharing"
