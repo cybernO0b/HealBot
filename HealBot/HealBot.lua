@@ -1773,7 +1773,7 @@ function HealBot_OnEvent_VariablesLoaded(self)
         HealBot_Talents[HEALBOT_FOCUSED_POWER] = 0
     elseif strsub(HealBot_PlayerClassEN, 1, 4) == HealBot_Class_En[HEALBOT_DRUID] then
         HealBot_ShortBuffs[HEALBOT_THORNS] = true
-        HealBot_ShortBuffs[HEALBOT_THE_GIFT_OF_ISERA]=true
+        HealBot_ShortBuffs[HEALBOT_THE_GIFT_OF_ISERA] = true
         HealBot_BuffNameSwap = {
             [HEALBOT_MARK_OF_THE_WILD] = HEALBOT_GIFT_OF_THE_WILD,
             [HEALBOT_GIFT_OF_THE_WILD] = HEALBOT_MARK_OF_THE_WILD
@@ -2548,7 +2548,7 @@ function HealBot_configClassHoT(class, race)
     end
     if hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 3 then
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "A"
-    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 and class == HealBot_Class_En[HEALBOT_NEW_ITEMS] then 
+    elseif hbClassHoTwatch[HEALBOT_ACCESSORY_HEALING] == 2 and class == HealBot_Class_En[HEALBOT_NEW_ITEMS] then
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_ACCESSORY_HEALING] = nil
@@ -2559,7 +2559,14 @@ function HealBot_configClassHoT(class, race)
         HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = "C"
     else
         HealBot_Watch_HoT[HEALBOT_HEALING_RAIN] = nil
-    end  
+    end
+    if hbClassHoTwatch[HEALBOT_PRIMEVAL_MOISTURE] == 3 then
+        HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = "A"
+    elseif hbClassHoTwatch[HEALBOT_PRIMEVAL_MOISTURE] == 2 and class == HealBot_Class_En[HEALBOT_SHAMAN] then
+        HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = nil
+    end
 end
 
 function HealBot_Register_Events()
@@ -6219,7 +6226,7 @@ function HealBot_Update_Skins()
             if not Healbot_Config_Skins.CombatProtParty[Healbot_Config_Skins.Skins[x]] then Healbot_Config_Skins.CombatProtParty[Healbot_Config_Skins.Skins[x]] = 0 end
             if not Healbot_Config_Skins.CombatProtRaid[Healbot_Config_Skins.Skins[x]] then Healbot_Config_Skins.CombatProtRaid[Healbot_Config_Skins.Skins[x]] = 0 end
 
-            if strsub(HEALBOT_VERSION, 1, 7) == "3.3.5.2" then
+            if strsub(HEALBOT_VERSION, 1, 7) == "3.3.5.5" then
                 if Healbot_Config_Skins.AggroAlertLevel[Healbot_Config_Skins.Skins[x]] == 4 then Healbot_Config_Skins.AggroAlertLevel[Healbot_Config_Skins.Skins[x]] = 3 end
             end
         end
