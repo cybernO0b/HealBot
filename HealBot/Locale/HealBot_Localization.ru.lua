@@ -547,7 +547,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_HEAL_BUTTONS           = "Панели исцелений:";
     HEALBOT_OPTIONS_SELFHEALS              = "Себя"
     HEALBOT_OPTIONS_PETHEALS               = "Питомцев"
-    HEALBOT_OPTIONS_GROUPHEALS             = "Группу";
+    HEALBOT_OPTIONS_GROUPHEALS             = "Группа";
     HEALBOT_OPTIONS_TANKHEALS              = "Главных танков";
     HEALBOT_OPTIONS_MAINASSIST             = "Наводчик";
     HEALBOT_OPTIONS_TARGETHEALS            = "Цели";
