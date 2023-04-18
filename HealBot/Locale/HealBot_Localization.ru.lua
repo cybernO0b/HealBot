@@ -830,7 +830,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTION_NUMBARS                 = "Количество полос"
     HEALBOT_OPTION_NUMTANKS                = "Количество танков"
     HEALBOT_OPTION_NUMMYTARGETS            = "Количество моих целей"
-    HEALBOT_OPTION_NUMPETS                 = "Количество питов"
+    HEALBOT_OPTION_NUMPETS                 = "Количество питомцев"
     HEALBOT_WORD_TEST                      = "Тест";
     HEALBOT_WORD_OFF                       = "Выкл";
     HEALBOT_WORD_ON                        = "Вкл";
@@ -1006,7 +1006,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_CUSTOM_CAT_LK_ICC_CRIMSON      = "WotLK - ЦЛК Багровый зал"
     HEALBOT_CUSTOM_CAT_LK_ICC_FROSTWING    = "WotLK - ЦЛК Залы Ледокрылых"
     HEALBOT_CUSTOM_CAT_LK_ICC_THRONE       = "WotLK - ЦЛК Ледяной Трон"
-    HEALBOT_WORD_RESET                     = "Сбросс"
+    HEALBOT_WORD_RESET                     = "Сброс"
     HEALBOT_HBMENU                         = "HBmenu"
     HEALBOT_ACTION_HBFOCUS                 = "Левый клик - установить\nфокус на цель"
     HEALBOT_WORD_CLEAR                     = "Очистить"
@@ -1038,7 +1038,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_CMD_RESETSPELLS          = "Сброс заклинаний"
     HEALBOT_CMD_RESETCURES           = "Сброс лечений"
     HEALBOT_CMD_RESETBUFFS           = "Сброс баффов"
-    HEALBOT_CMD_RESETBARS            = "Сброс позицый панелей"
+    HEALBOT_CMD_RESETBARS            = "Сброс позиций панелей"
     HEALBOT_CMD_TOGGLETITAN          = "Переключить обновления титана"
     HEALBOT_CMD_SUPPRESSSOUND        = "Переключение сдерживания звука когда используется авто аксессуар"
     HEALBOT_CMD_SUPPRESSERRORS       = "Переключение сдерживания ошибок когда используется авто аксессуар"
