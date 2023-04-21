@@ -467,10 +467,10 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_INFO                   = "Инфо"
     HEALBOT_OPTIONS_TAB_GENERAL            = "Общее";
     HEALBOT_OPTIONS_TAB_SPELLS             = "Заклинания";
-    HEALBOT_OPTIONS_TAB_HEALING            = "Изцеление";
+    HEALBOT_OPTIONS_TAB_HEALING            = "Исцеление";
     HEALBOT_OPTIONS_TAB_CDC                = "Излечение";
     HEALBOT_OPTIONS_TAB_SKIN               = "Шкурки";
-    HEALBOT_OPTIONS_TAB_BUFFS              = "Бафы";
+    HEALBOT_OPTIONS_TAB_BUFFS              = "Баффы";
 
     HEALBOT_OPTIONS_PANEL_TEXT             = "Настройки панели исцеления";
     HEALBOT_OPTIONS_BARALPHA               = "Прозрач-ть включеных";
@@ -497,7 +497,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_SORTBY_CLASS                   = "Класс";
     HEALBOT_SORTBY_GROUP                   = "Группа";
     HEALBOT_SORTBY_MAXHEALTH               = "Макс здоровья";
-    HEALBOT_OPTIONS_NEWDEBUFFTEXT          = "Нов.Дебаф"
+    HEALBOT_OPTIONS_NEWDEBUFFTEXT          = "Нов.Дебафф"
     HEALBOT_OPTIONS_DELSKIN                = "Удалить";
     HEALBOT_OPTIONS_NEWSKINTEXT            = "Нов.Шкурка";
     HEALBOT_OPTIONS_SAVESKIN               = "Сохранить";
@@ -505,7 +505,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_SKINPANEL              = "Цвета панели";
     HEALBOT_SKIN_ENTEXT                    = "Включить";
     HEALBOT_SKIN_DISTEXT                   = "Выключить";
-    HEALBOT_SKIN_DEBTEXT                   = "Дебаф";
+    HEALBOT_SKIN_DEBTEXT                   = "Дебафф";
     HEALBOT_SKIN_BACKTEXT                  = "Фон";
     HEALBOT_SKIN_BORDERTEXT                = "Края";
     HEALBOT_OPTIONS_SKINFONT               = "Шрифт"
@@ -535,10 +535,10 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_CDCSHOWHBARS           = "На полосе здоровья";
     HEALBOT_OPTIONS_CDCSHOWABARS           = "На полосе угрозы";
     HEALBOT_OPTIONS_CDCCLASS               = "Монитор классов";
-    HEALBOT_OPTIONS_CDCWARNINGS            = "Предупреждения о дебафах";
-    HEALBOT_OPTIONS_SHOWDEBUFFICON         = "Иконки дебафов";
-    HEALBOT_OPTIONS_SHOWDEBUFFWARNING      = "Сообщения о дебафах";
-    HEALBOT_OPTIONS_SOUNDDEBUFFWARNING     = "Звук при дебафе";
+    HEALBOT_OPTIONS_CDCWARNINGS            = "Предупреждения о дебаффах";
+    HEALBOT_OPTIONS_SHOWDEBUFFICON         = "Иконки дебаффов";
+    HEALBOT_OPTIONS_SHOWDEBUFFWARNING      = "Сообщения о дебаффах";
+    HEALBOT_OPTIONS_SOUNDDEBUFFWARNING     = "Звук при дебаффе";
     HEALBOT_OPTIONS_SOUND                  = "Звук"
     HEALBOT_OPTIONS_SOUND1                 = "Звук 1"
     HEALBOT_OPTIONS_SOUND2                 = "Звук 2"
@@ -547,7 +547,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_HEAL_BUTTONS           = "Панели исцелений:";
     HEALBOT_OPTIONS_SELFHEALS              = "Себя"
     HEALBOT_OPTIONS_PETHEALS               = "Питомцев"
-    HEALBOT_OPTIONS_GROUPHEALS             = "Группу";
+    HEALBOT_OPTIONS_GROUPHEALS             = "Группа";
     HEALBOT_OPTIONS_TANKHEALS              = "Главных танков";
     HEALBOT_OPTIONS_MAINASSIST             = "Наводчик";
     HEALBOT_OPTIONS_TARGETHEALS            = "Цели";
@@ -643,23 +643,23 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_BUFFSTEXT1             = "Заклинание";
     HEALBOT_OPTIONS_BUFFSTEXT2             = "Проверка";
     HEALBOT_OPTIONS_BUFFSTEXT3             = "Цвета панелей";
-    HEALBOT_OPTIONS_BUFF                   = "Баф";
+    HEALBOT_OPTIONS_BUFF                   = "Бафф";
     HEALBOT_OPTIONS_BUFFSELF               = "на себя";
     HEALBOT_OPTIONS_BUFFPARTY              = "на группу";
     HEALBOT_OPTIONS_BUFFRAID               = "на рейд";
-    HEALBOT_OPTIONS_MONITORBUFFS           = "Монитор пропущенных бафов";
+    HEALBOT_OPTIONS_MONITORBUFFS           = "Монитор пропущенных баффов";
     HEALBOT_OPTIONS_MONITORBUFFSC          = "также в бою";
     HEALBOT_OPTIONS_ENABLESMARTCAST        = "БыстроеЧтение когда в не боя";
     HEALBOT_OPTIONS_SMARTCASTSPELLS        = "Заклинания";
-    HEALBOT_OPTIONS_SMARTCASTDISPELL       = "Расс-ть дебаф";
-    HEALBOT_OPTIONS_SMARTCASTBUFF          = "Добавить баф";
+    HEALBOT_OPTIONS_SMARTCASTDISPELL       = "Расс-ть дебафф";
+    HEALBOT_OPTIONS_SMARTCASTBUFF          = "Добавить бафф";
     HEALBOT_OPTIONS_SMARTCASTHEAL          = "Исцеления";
     HEALBOT_OPTIONS_BAR2SIZE               = "Размер полосы маны";
     HEALBOT_OPTIONS_SETSPELLS              = "Заклинания";
     HEALBOT_OPTIONS_ENABLEDBARS            = "Включить панели";
     HEALBOT_OPTIONS_DISABLEDBARS           = "Отключить панели когда в не боя";
-    HEALBOT_OPTIONS_MONITORDEBUFFS         = "Монитор снятия дебафов";
-    HEALBOT_OPTIONS_DEBUFFTEXT1            = "Зак-ние снимающее дебафы";
+    HEALBOT_OPTIONS_MONITORDEBUFFS         = "Монитор снятия дебаффов";
+    HEALBOT_OPTIONS_DEBUFFTEXT1            = "Зак-ние снимающее дебаффы";
 
     HEALBOT_OPTIONS_IGNOREDEBUFF           = "Игнорировать:";
     HEALBOT_OPTIONS_IGNOREDEBUFFCLASS      = "По классам";
@@ -685,8 +685,8 @@ if (GetLocale() == "ruRU") then
     HEALBOT_TELL                           = "Сказать";
 
     HEALBOT_TITAN_SMARTCAST                = "БыстроеЧтение";
-    HEALBOT_TITAN_MONITORBUFFS             = "Монитор бафов";
-    HEALBOT_TITAN_MONITORDEBUFFS           = "Монитор дебафов"
+    HEALBOT_TITAN_MONITORBUFFS             = "Монитор баффов";
+    HEALBOT_TITAN_MONITORDEBUFFS           = "Монитор дебаффов"
     HEALBOT_TITAN_SHOWBARS                 = "Панели для";
     HEALBOT_TITAN_EXTRABARS                = "Доп. панели";
     HEALBOT_BUTTON_TOOLTIP                 = "ЛКМ переключает окно настроек HealBotа\nПКМ (Удерживая) для перемещения";
@@ -738,11 +738,11 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_MYTARGET               = "Моя цель";
 
     HEALBOT_DISCONNECTED_TEXT              = "<ОФФ>"
-    HEALBOT_OPTIONS_SHOWUNITBUFFTIME       = "Показ.мои бафы";
+    HEALBOT_OPTIONS_SHOWUNITBUFFTIME       = "Показ.мои баффы";
     HEALBOT_OPTIONS_TOOLTIPUPDATE          = "Постоянно обновлять";
-    HEALBOT_OPTIONS_BUFFSTEXTTIMER         = "Показ баф перед окончанием";
-    HEALBOT_OPTIONS_SHORTBUFFTIMER         = "Короткие бафы"
-    HEALBOT_OPTIONS_LONGBUFFTIMER          = "Длинные бафы"
+    HEALBOT_OPTIONS_BUFFSTEXTTIMER         = "Показ бафф перед окончанием";
+    HEALBOT_OPTIONS_SHORTBUFFTIMER         = "Короткие баффы"
+    HEALBOT_OPTIONS_LONGBUFFTIMER          = "Длинные баффы"
 
     HEALBOT_BALANCE                        = "Баланс"
     HEALBOT_FERAL                          = "Сила зверя"
@@ -830,7 +830,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTION_NUMBARS                 = "Количество полос"
     HEALBOT_OPTION_NUMTANKS                = "Количество танков"
     HEALBOT_OPTION_NUMMYTARGETS            = "Количество моих целей"
-    HEALBOT_OPTION_NUMPETS                 = "Количество питов"
+    HEALBOT_OPTION_NUMPETS                 = "Количество питомцев"
     HEALBOT_WORD_TEST                      = "Тест";
     HEALBOT_WORD_OFF                       = "Выкл";
     HEALBOT_WORD_ON                        = "Вкл";
@@ -898,7 +898,7 @@ if (GetLocale() == "ruRU") then
 
     HEALBOT_CHAT_ADDONID                   = "[HealBot]  "
     HEALBOT_CHAT_NEWVERSION1               = "Доступна новая версия"
-    HEALBOT_CHAT_NEWVERSION2               = "на http://healbot.alturl.com"
+    HEALBOT_CHAT_NEWVERSION2               = "на https://discord.gg/addonsforsirus"
     HEALBOT_CHAT_SHARESKINERR1             = " Skin not found for Sharing"
     HEALBOT_CHAT_SHARESKINERR2             = "'s HealBot version is too old for Skin Sharing"
     HEALBOT_CHAT_SHARESKINERR3             = " not found for Skin Sharing"
@@ -915,7 +915,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_CHAT_HARDRELOAD                = "Reload UI requested"
     HEALBOT_CHAT_CONFIRMSPELLRESET         = "Заклинания сброшены"
     HEALBOT_CHAT_CONFIRMCURESRESET         = "Лечения сброшены"
-    HEALBOT_CHAT_CONFIRMBUFFSRESET         = "Бафы сброшены"
+    HEALBOT_CHAT_CONFIRMBUFFSRESET         = "Баффы сброшены"
     HEALBOT_CHAT_POSSIBLEMISSINGMEDIA      =
     "Unable to receive all Skin settings - Possibly missing SharedMedia, see HealBot/Docs/readme.html for links"
     HEALBOT_CHAT_MACROSOUNDON              = "Sound not suppressed when using auto trinkets"
@@ -1006,7 +1006,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_CUSTOM_CAT_LK_ICC_CRIMSON      = "WotLK - ЦЛК Багровый зал"
     HEALBOT_CUSTOM_CAT_LK_ICC_FROSTWING    = "WotLK - ЦЛК Залы Ледокрылых"
     HEALBOT_CUSTOM_CAT_LK_ICC_THRONE       = "WotLK - ЦЛК Ледяной Трон"
-    HEALBOT_WORD_RESET                     = "Сбросс"
+    HEALBOT_WORD_RESET                     = "Сброс"
     HEALBOT_HBMENU                         = "HBmenu"
     HEALBOT_ACTION_HBFOCUS                 = "Левый клик - установить\nфокус на цель"
     HEALBOT_WORD_CLEAR                     = "Очистить"
@@ -1030,15 +1030,15 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_AGGROFLASHALPHA  = "Прозрачность сверкания"
     HEALBOT_OPTIONS_SHOWDURATIONFROM = "Длительность от"
     HEALBOT_OPTIONS_SHOWDURATIONWARN = "Оповещение длительности от"
-    HEALBOT_CMD_RESETCUSTOMDEBUFFS   = "Сброс своих дебафов"
+    HEALBOT_CMD_RESETCUSTOMDEBUFFS   = "Сброс своих дебаффов"
     HEALBOT_CMD_RESETSKINS           = "Сброс шкурок"
     HEALBOT_CMD_CLEARBLACKLIST       = "Очистить черный список"
     HEALBOT_CMD_TOGGLEACCEPTSKINS    = "Переключение приёма шкурок от других"
     HEALBOT_CMD_COPYSPELLS           = "Копировать данное заклинание во все наборы"
     HEALBOT_CMD_RESETSPELLS          = "Сброс заклинаний"
     HEALBOT_CMD_RESETCURES           = "Сброс лечений"
-    HEALBOT_CMD_RESETBUFFS           = "Сброс бафов"
-    HEALBOT_CMD_RESETBARS            = "Сброс позицый панелей"
+    HEALBOT_CMD_RESETBUFFS           = "Сброс баффов"
+    HEALBOT_CMD_RESETBARS            = "Сброс позиций панелей"
     HEALBOT_CMD_TOGGLETITAN          = "Переключить обновления титана"
     HEALBOT_CMD_SUPPRESSSOUND        = "Переключение сдерживания звука когда используется авто аксессуар"
     HEALBOT_CMD_SUPPRESSERRORS       = "Переключение сдерживания ошибок когда используется авто аксессуар"
@@ -1046,7 +1046,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_WORD_RUN                 = "Пуск"
     HEALBOT_OPTIONS_MOUSEWHEEL       = "Включит меню на колесике мыши"
     HEALBOT_CMD_DELCUSTOMDEBUFF10    = "Delete custom debuffs on priority 10"
-    HEALBOT_ACCEPTSKINS              = "Принемать шкурки от других"
+    HEALBOT_ACCEPTSKINS              = "Принимать шкурки от других"
     HEALBOT_SUPPRESSSOUND            = "Авто-Аксессуар: Подавлять звуки"
     HEALBOT_SUPPRESSERROR            = "Авто-Аксессуар: Подавлять ошибки"
 end

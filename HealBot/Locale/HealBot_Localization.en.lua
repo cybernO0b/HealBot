@@ -1,3 +1,4 @@
+
 HEALBOT_VERSION                        = "3.3.5.5";
 HealBotSkinVersion                     = 17;
 
@@ -432,6 +433,7 @@ HB_ONLINE                              = "online";  -- has come online msg
 -----------------
 -- Translation --
 -----------------
+
 
 HEALBOT_ADDON                          = "HealBot " .. HEALBOT_VERSION;
 HEALBOT_LOADED                         = " loaded.";
@@ -1045,3 +1047,4 @@ HEALBOT_OPTIONS_COMBATPROT = "Combat Protection"
 HEALBOT_COMBATPROT_INFO    = "Combat Protection allows HealBot to better manage\nchanges to the party/raid during combat."
 HEALBOT_COMBATPROT_PARTYNO = "bars Reserved for Party"
 HEALBOT_COMBATPROT_RAIDNO  = "bars Reserved for Raid"
+
