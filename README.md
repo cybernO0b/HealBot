@@ -16,4 +16,4 @@
 Настроенный интерфейс примерно может выглядеть так:
 
 
-<img src="https://github.com/cybernO0b/Images-for-HealBot/blob/main/Images/Примерный%20интерфейс.jpg">
+<img src="https://github.com/cybernO0b/Images-for-HealBot/blob/main/Images/Примерный%20интерфейс3.jpg">
