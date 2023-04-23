@@ -40,6 +40,8 @@ if (GetLocale() == "ruRU") then
     HEALBOT_SACRED_SACRIFICE               = GetSpellInfo(64205)  or "Священная жертва";
     HEALBOT_HEALING_RAIN                   = GetSpellInfo(308017) or "Целительный Ливень";
     HEALBOT_PRIMEVAL_MOISTURE              = GetSpellInfo(308015) or "Первозданная влага";
+    HEALBOT_ICE_BLOCK                      = GetSpellInfo(45438)  or "Ледяная глыба";
+    
 
     --STANDART_SPELLS--
 

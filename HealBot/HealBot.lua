@@ -2567,6 +2567,13 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = nil
     end
+    if hbClassHoTwatch[HEALBOT_ICE_BLOCK] == 3 then
+        HealBot_Watch_HoT[HEALBOT_ICE_BLOCK] = "A"
+    elseif hbClassHoTwatch[HEALBOT_ICE_BLOCK] == 2 and class == HealBot_Class_En[HEALBOT_MAGE] then
+        HealBot_Watch_HoT[HEALBOT_ICE_BLOCK] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_ICE_BLOCK] = nil
+    end
 end
 
 function HealBot_Register_Events()
