@@ -2567,6 +2567,13 @@ function HealBot_configClassHoT(class, race)
     else
         HealBot_Watch_HoT[HEALBOT_PRIMEVAL_MOISTURE] = nil
     end
+    if hbClassHoTwatch[HEALBOT_ICE_BLOCK] == 3 then
+        HealBot_Watch_HoT[HEALBOT_ICE_BLOCK] = "A"
+    elseif hbClassHoTwatch[HEALBOT_ICE_BLOCK] == 2 and class == HealBot_Class_En[HEALBOT_MAGE] then
+        HealBot_Watch_HoT[HEALBOT_ICE_BLOCK] = "C"
+    else
+        HealBot_Watch_HoT[HEALBOT_ICE_BLOCK] = nil
+    end
 end
 
 function HealBot_Register_Events()
@@ -6226,7 +6233,7 @@ function HealBot_Update_Skins()
             if not Healbot_Config_Skins.CombatProtParty[Healbot_Config_Skins.Skins[x]] then Healbot_Config_Skins.CombatProtParty[Healbot_Config_Skins.Skins[x]] = 0 end
             if not Healbot_Config_Skins.CombatProtRaid[Healbot_Config_Skins.Skins[x]] then Healbot_Config_Skins.CombatProtRaid[Healbot_Config_Skins.Skins[x]] = 0 end
 
-            if strsub(HEALBOT_VERSION, 1, 7) == "3.3.5.5" then
+            if strsub(HEALBOT_VERSION, 1, 7) == "3.3.5.6.1" then
                 if Healbot_Config_Skins.AggroAlertLevel[Healbot_Config_Skins.Skins[x]] == 4 then Healbot_Config_Skins.AggroAlertLevel[Healbot_Config_Skins.Skins[x]] = 3 end
             end
         end
