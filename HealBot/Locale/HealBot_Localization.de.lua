@@ -745,7 +745,7 @@ HEALBOT_OPTIONS_BUTTONSHARESKIN     = "Teile mit"
 
 HEALBOT_CHAT_ADDONID                = "[HealBot]  "
 HEALBOT_CHAT_NEWVERSION1            = "Eine neuere Version ist unter"
-HEALBOT_CHAT_NEWVERSION2            = "https://discord.gg/addonsforsirus verf\195\188gbar"
+HEALBOT_CHAT_NEWVERSION2            = "https://discord.gg/addony-dlia-sirus-su-914079030125420565 verf\195\188gbar"
 HEALBOT_CHAT_SHARESKINERR1          = " Skin zum Teilen nicht gefunden"
 HEALBOT_CHAT_SHARESKINERR2          = "'s HealBot Version ist zu alt zum Skin Teilen"
 HEALBOT_CHAT_SHARESKINERR3          = " nicht gefunden zum Skin Teilen"
