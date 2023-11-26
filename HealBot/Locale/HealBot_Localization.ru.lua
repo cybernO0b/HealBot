@@ -651,7 +651,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_BUFFRAID               = "на рейд";
     HEALBOT_OPTIONS_MONITORBUFFS           = "Монитор пропущенных баффов";
     HEALBOT_OPTIONS_MONITORBUFFSC          = "также в бою";
-    HEALBOT_OPTIONS_ENABLESMARTCAST        = "БыстроеЧтение когда в не боя";
+    HEALBOT_OPTIONS_ENABLESMARTCAST        = "БыстроеЧтение, когда в не боя";
     HEALBOT_OPTIONS_SMARTCASTSPELLS        = "Заклинания";
     HEALBOT_OPTIONS_SMARTCASTDISPELL       = "Расс-ть дебафф";
     HEALBOT_OPTIONS_SMARTCASTBUFF          = "Добавить бафф";
@@ -659,7 +659,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_BAR2SIZE               = "Размер полосы маны";
     HEALBOT_OPTIONS_SETSPELLS              = "Заклинания";
     HEALBOT_OPTIONS_ENABLEDBARS            = "Включить панели";
-    HEALBOT_OPTIONS_DISABLEDBARS           = "Отключить панели когда в не боя";
+    HEALBOT_OPTIONS_DISABLEDBARS           = "Отключить панели, когда в не боя";
     HEALBOT_OPTIONS_MONITORDEBUFFS         = "Монитор снятия дебаффов";
     HEALBOT_OPTIONS_DEBUFFTEXT1            = "Зак-ние снимающее дебаффы";
 
@@ -701,7 +701,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_HOTBARRIGHT            = "Справа";
     HEALBOT_OPTIONS_HOTBARLEFT             = "Слева";
 
-    HEALBOT_OPTIONS_ENABLETARGETSTATUS     = "Включенные настройки когда цель в бою";
+    HEALBOT_OPTIONS_ENABLETARGETSTATUS     = "Включенные настройки, когда цель в бою";
 
     HEALBOT_ZONE_AB                        = "Низина Арати";
     HEALBOT_ZONE_AV                        = "Альтеракская долина";
@@ -774,7 +774,7 @@ if (GetLocale() == "ruRU") then
     HEALBOT_BLOOD                          = "Кровь"
     HEALBOT_UNHOLY                         = "Нечестивость"
 
-    HEALBOT_OPTIONS_VISIBLERANGE           = "Отключать панель когда расстояние больше 100 метров"
+    HEALBOT_OPTIONS_VISIBLERANGE           = "Отключать панель, когда расстояние больше 100 метров"
     HEALBOT_OPTIONS_NOTIFY_HEAL_MSG        = "Сообщения о исцелении"
     HEALBOT_OPTIONS_NOTIFY_OTHER_MSG       = "Другие сообщения"
     HEALBOT_WORDS_YOU                      = "вы";
@@ -872,8 +872,8 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_BUTTONCASTRELEASED     = "Отпущена"
 
     HEALBOT_INFO_INCHEALINFO               = "== Инфо входящего исцеления =="
-    HEALBOT_INFO_ADDONCPUUSAGE             = "== Исп. CPU аддоном в секундах =="
-    HEALBOT_INFO_ADDONCOMMUSAGE            = "== Исп. коммуникации аддоном =="
+    HEALBOT_INFO_ADDONCPUUSAGE             = "== Исп. CPU аддоном в сек. =="
+    HEALBOT_INFO_ADDONCOMMUSAGE            = "== Коммуникация =="
     HEALBOT_WORD_HEALER                    = "Лекарь"
     HEALBOT_WORD_VERSION                   = "Версия"
     HEALBOT_WORD_CLIENT                    = "Клиент"
@@ -900,7 +900,7 @@ if (GetLocale() == "ruRU") then
 
     HEALBOT_CHAT_ADDONID                   = "[HealBot]  "
     HEALBOT_CHAT_NEWVERSION1               = "Доступна новая версия"
-    HEALBOT_CHAT_NEWVERSION2               = "на https://discord.gg/addonsforsirus"
+    HEALBOT_CHAT_NEWVERSION2               = "на https://discord.gg/addony-dlia-sirus-su-914079030125420565"
     HEALBOT_CHAT_SHARESKINERR1             = " Skin not found for Sharing"
     HEALBOT_CHAT_SHARESKINERR2             = "'s HealBot version is too old for Skin Sharing"
     HEALBOT_CHAT_SHARESKINERR3             = " not found for Skin Sharing"
@@ -1042,8 +1042,8 @@ if (GetLocale() == "ruRU") then
     HEALBOT_CMD_RESETBUFFS           = "Сброс баффов"
     HEALBOT_CMD_RESETBARS            = "Сброс позиций панелей"
     HEALBOT_CMD_TOGGLETITAN          = "Переключить обновления титана"
-    HEALBOT_CMD_SUPPRESSSOUND        = "Переключение сдерживания звука когда используется авто аксессуар"
-    HEALBOT_CMD_SUPPRESSERRORS       = "Переключение сдерживания ошибок когда используется авто аксессуар"
+    HEALBOT_CMD_SUPPRESSSOUND        = "Переключение сдерживания звука, когда используется авто аксессуар"
+    HEALBOT_CMD_SUPPRESSERRORS       = "Переключение сдерживания ошибок, когда используется авто аксессуар"
     HEALBOT_OPTIONS_COMMANDS         = "Команды HealBot"
     HEALBOT_WORD_RUN                 = "Пуск"
     HEALBOT_OPTIONS_MOUSEWHEEL       = "Включит меню на колесике мыши"
