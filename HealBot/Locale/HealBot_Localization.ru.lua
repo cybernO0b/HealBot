@@ -872,8 +872,8 @@ if (GetLocale() == "ruRU") then
     HEALBOT_OPTIONS_BUTTONCASTRELEASED     = "Отпущена"
 
     HEALBOT_INFO_INCHEALINFO               = "== Инфо входящего исцеления =="
-    HEALBOT_INFO_ADDONCPUUSAGE             = "== Исп. CPU аддоном в секундах =="
-    HEALBOT_INFO_ADDONCOMMUSAGE            = "== Исп. коммуникации аддоном =="
+    HEALBOT_INFO_ADDONCPUUSAGE             = "== Исп. CPU аддоном в сек. =="
+    HEALBOT_INFO_ADDONCOMMUSAGE            = "== Коммуникация =="
     HEALBOT_WORD_HEALER                    = "Лекарь"
     HEALBOT_WORD_VERSION                   = "Версия"
     HEALBOT_WORD_CLIENT                    = "Клиент"
