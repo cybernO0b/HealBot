@@ -1988,193 +1988,211 @@ local setDropdown=nil
 local partyNo=nil
 local sTar, sTrin1, sTrin2=0, 0, 0
 local curGUID=nil
-function HealBot_Action_SetButtonAttrib(button,bbutton,bkey,status,j)
- 
-    if strlen(bkey)>1 then
-        HB_prefix = strlower(bkey).."-"
+function HealBot_Action_SetButtonAttrib(button, bbutton, bkey, status, j)
+    if strlen(bkey) > 1 then
+        HB_prefix = strlower(bkey) .. "-"
     else
-        HB_prefix = "";
+        HB_prefix = ""
     end
-    
-    HB_combo_prefix = bkey..bbutton..HealBot_Config.CurrentSpec;
-    if status=="Enabled" then
-        sName, sTar, sTrin1, sTrin2 = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
-    elseif status=="Disabled" then
-        sName, sTar, sTrin1, sTrin2 = HealBot_Action_AttribDisSpellPattern(HB_combo_prefix)
+
+    HB_combo_prefix = bkey .. bbutton .. HealBot_Config.CurrentSpec
+
+    local sName, sTar, sTrin1, sTrin2
+    local input = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
+
+    -- Check if the input is a number (spell ID) or a string (spell name)
+    local isSpellID = tonumber(input)
+    if isSpellID then
+        sName = GetSpellInfo(isSpellID)
+        sTar, sTrin1, sTrin2 = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
     else
-        sName=nil;
-    end
-    if sName then
-        if strlower(sName)==strlower(HEALBOT_DISABLED_TARGET) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, "target"..j);
-            button:SetAttribute(HB_prefix.."type"..j, "target")
-            button:SetAttribute(HB_prefix.."type-target"..j, "target")
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
-        elseif strlower(sName)==strlower(HEALBOT_FOCUS) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, "focus"..j);
-            button:SetAttribute(HB_prefix.."type"..j, "focus")
-            button:SetAttribute(HB_prefix.."type-focus"..j, "focus")
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
-        elseif strlower(sName)==strlower(HEALBOT_ASSIST) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, "assist"..j);
-            button:SetAttribute(HB_prefix.."type"..j, "assist")
-            button:SetAttribute(HB_prefix.."type-assist"..j, "assist")
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
-        elseif strlower(sName)==strlower(HEALBOT_STOP) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-            button:SetAttribute(HB_prefix.."type"..j, "macro")
-            button:SetAttribute(HB_prefix.."macrotext"..j, "/stopcasting")
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
-        elseif strsub(strlower(sName),1,4)==strlower(HEALBOT_TELL) then
-            mText='/script local n=UnitName("hbtarget");SendChatMessage("hbMSG","WHISPER",nil,n)'
-            mText=string.gsub(mText,"hbtarget",button.unit)
-            mText=string.gsub(mText,"hbMSG", strtrim(strsub(sName,5)))
-            button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-            button:SetAttribute(HB_prefix.."type"..j, "macro")
-            button:SetAttribute(HB_prefix.."macrotext"..j, mText)
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
-        elseif strlower(sName)==strlower(HEALBOT_MENU) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-            button:SetAttribute(HB_prefix.."type"..j, "showmenu")
-            showmenu = function()
-                if button.unit=="player" then
-                    setDropdown=PlayerFrameDropDown
-                elseif button.unit=="target" then
-                    setDropdown=TargetFrameDropDown
-                elseif button.unit=="pet" then
-                    setDropdown=PetFrameDropDown
-                else
-                    xUnit=HealBot_Action_UnitID(button.unit)
-                    partyNo = tonumber(xUnit:match('party(%d+)')) or 0
-                    if partyNo > 0 then
-                        setDropdown = _G['PartyMemberFrame' .. partyNo .. 'DropDown']
-                    else
-                        partyNo = tonumber(xUnit:match('raid(%d+)')) or 0
-                        if partyNo == 0 then
-                            partyNo=button.id
-                        end
-                        FriendsDropDown.name = UnitName(xUnit);    
-                        FriendsDropDown.id = partyNo;    
-                        FriendsDropDown.unit = xUnit;    
-                        FriendsDropDown.initialize = RaidFrameDropDown_Initialize;    
-                        FriendsDropDown.displayMode = "MENU";    
-                        setDropdown=FriendsDropDown
-                    end
-                end
-                ToggleDropDownMenu(1, nil, setDropdown, "cursor", 10, -8)  
-            end
-            button.showmenu = showmenu 
-        elseif strlower(sName)==strlower(HEALBOT_HBMENU) and HealBot_UnitGUID(button.unit) then
-            curGUID=HealBot_UnitGUID(button.unit)
-            button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-            button:SetAttribute(HB_prefix.."type"..j, "showhbmenu")
-            showHBmenu = function()
-                local HBFriendsDropDown = CreateFrame("Frame", "HealBot_Action_hbmenuFrame_DropDown", UIParent, "UIDropDownMenuTemplate");
-                HBFriendsDropDown.unit = button.unit
-                HBFriendsDropDown.name = UnitName(button.unit)
-                HBFriendsDropDown.initialize = HealBot_Action_hbmenuFrame_DropDown_Initialize
-                HBFriendsDropDown.displayMode = "MENU"
-                ToggleDropDownMenu(1, nil, HBFriendsDropDown, "cursor", 10, -8)
-            end
-            button.showhbmenu = showHBmenu
-        elseif strlower(sName)==strlower(HEALBOT_MAINTANK) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-            button:SetAttribute(HB_prefix.."type"..j, "maintank")
-            button:SetAttribute(HB_prefix.."type-maintank"..j, "toggle")
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
-        elseif strlower(sName)==strlower(HEALBOT_MAINASSIST) then
-            button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-            button:SetAttribute(HB_prefix.."type"..j, "mainassist")
-            button:SetAttribute(HB_prefix.."type-mainassist"..j, "toggle")
-            hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+        sName = input
+        local spellID = HealBot_GetSpellId(sName)
+        if spellID then
+            sTar, sTrin1, sTrin2 = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
         else
-            sID=HealBot_GetSpellId(sName)
-            if sID then
-                if sTar==1 or sTrin1==1 or sTrin2==1 then
-                    mText = HealBot_Action_AlterSpell2Macro(sName, sTar, sTrin1, sTrin2, button.unit, HB_combo_prefix)
-                    button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-                    button:SetAttribute(HB_prefix.."type"..j,"macro")
-                    button:SetAttribute(HB_prefix.."macrotext"..j, mText)
+            -- Handle the case where the input is neither a valid ID nor a valid spell name
+            sName = nil
+        end
+    end
+if sName then
+    if strlower(sName)==strlower(HEALBOT_DISABLED_TARGET) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, "target"..j);
+        button:SetAttribute(HB_prefix.."type"..j, "target")
+        button:SetAttribute(HB_prefix.."type-target"..j, "target")
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    elseif strlower(sName)==strlower(HEALBOT_FOCUS) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, "focus"..j);
+        button:SetAttribute(HB_prefix.."type"..j, "focus")
+        button:SetAttribute(HB_prefix.."type-focus"..j, "focus")
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    elseif strlower(sName)==strlower(HEALBOT_ASSIST) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, "assist"..j);
+        button:SetAttribute(HB_prefix.."type"..j, "assist")
+        button:SetAttribute(HB_prefix.."type-assist"..j, "assist")
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    elseif strlower(sName)==strlower(HEALBOT_STOP) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+        button:SetAttribute(HB_prefix.."type"..j, "macro")
+        button:SetAttribute(HB_prefix.."macrotext"..j, "/stopcasting")
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    elseif strsub(strlower(sName),1,4)==strlower(HEALBOT_TELL) then
+        mText='/script local n=UnitName("hbtarget");SendChatMessage("hbMSG","WHISPER",nil,n)'
+        mText=string.gsub(mText,"hbtarget",button.unit)
+        mText=string.gsub(mText,"hbMSG", strtrim(strsub(sName,5)))
+        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+        button:SetAttribute(HB_prefix.."type"..j, "macro")
+        button:SetAttribute(HB_prefix.."macrotext"..j, mText)
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    elseif strlower(sName)==strlower(HEALBOT_MENU) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+        button:SetAttribute(HB_prefix.."type"..j, "showmenu")
+        showmenu = function()
+            if button.unit=="player" then
+                setDropdown=PlayerFrameDropDown
+            elseif button.unit=="target" then
+                setDropdown=TargetFrameDropDown
+            elseif button.unit=="pet" then
+                setDropdown=PetFrameDropDown
+            else
+                xUnit=HealBot_Action_UnitID(button.unit)
+                partyNo = tonumber(xUnit:match('party(%d+)')) or 0
+                if partyNo > 0 then
+                    setDropdown = _G['PartyMemberFrame' .. partyNo .. 'DropDown']
                 else
-                    button:SetAttribute(HB_prefix.."helpbutton"..j, "heal"..j);
-                    button:SetAttribute(HB_prefix.."type-heal"..j, "spell");
-                    button:SetAttribute(HB_prefix.."spell-heal"..j, sName);
-                    hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+                    partyNo = tonumber(xUnit:match('raid(%d+)')) or 0
+                    if partyNo == 0 then
+                        partyNo=button.id
+                    end
+                    FriendsDropDown.name = UnitName(xUnit);    
+                    FriendsDropDown.id = partyNo;    
+                    FriendsDropDown.unit = xUnit;    
+                    FriendsDropDown.initialize = RaidFrameDropDown_Initialize;    
+                    FriendsDropDown.displayMode = "MENU";    
+                    setDropdown=FriendsDropDown
+                end
+            end
+            ToggleDropDownMenu(1, nil, setDropdown, "cursor", 10, -8)  
+        end
+        button.showmenu = showmenu 
+    elseif strlower(sName)==strlower(HEALBOT_HBMENU) and HealBot_UnitGUID(button.unit) then
+        curGUID=HealBot_UnitGUID(button.unit)
+        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+        button:SetAttribute(HB_prefix.."type"..j, "showhbmenu")
+        showHBmenu = function()
+            local HBFriendsDropDown = CreateFrame("Frame", "HealBot_Action_hbmenuFrame_DropDown", UIParent, "UIDropDownMenuTemplate");
+            HBFriendsDropDown.unit = button.unit
+            HBFriendsDropDown.name = UnitName(button.unit)
+            HBFriendsDropDown.initialize = HealBot_Action_hbmenuFrame_DropDown_Initialize
+            HBFriendsDropDown.displayMode = "MENU"
+            ToggleDropDownMenu(1, nil, HBFriendsDropDown, "cursor", 10, -8)
+        end
+        button.showhbmenu = showHBmenu
+    elseif strlower(sName)==strlower(HEALBOT_MAINTANK) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+        button:SetAttribute(HB_prefix.."type"..j, "maintank")
+        button:SetAttribute(HB_prefix.."type-maintank"..j, "toggle")
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    elseif strlower(sName)==strlower(HEALBOT_MAINASSIST) then
+        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+        button:SetAttribute(HB_prefix.."type"..j, "mainassist")
+        button:SetAttribute(HB_prefix.."type-mainassist"..j, "toggle")
+        hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+    else
+        sID=HealBot_GetSpellId(sName)
+        if sID then
+            if sTar==1 or sTrin1==1 or sTrin2==1 then
+                mText = HealBot_Action_AlterSpell2Macro(sName, sTar, sTrin1, sTrin2, button.unit, HB_combo_prefix)
+                button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+                button:SetAttribute(HB_prefix.."type"..j,"macro")
+                button:SetAttribute(HB_prefix.."macrotext"..j, mText)
+            else
+                button:SetAttribute(HB_prefix.."helpbutton"..j, "heal"..j);
+                button:SetAttribute(HB_prefix.."type-heal"..j, "spell");
+                button:SetAttribute(HB_prefix.."spell-heal"..j, sName);
+                hbAttribsMinReset[button.id..HB_prefix..status..j]=true
+            end
+        else
+            mId=GetMacroIndexByName(sName)
+            if mId ~= 0 then
+                _,_,mText=GetMacroInfo(mId)
+     --        mUnit = button.unit
+                if UnitExists(HealBot_UnitPet(button.unit)) then
+                    mText=string.gsub(mText,"hbtargetpet",HealBot_UnitPet(button.unit))
+                end
+                mText=string.gsub(mText,"hbtargettargettarget",button.unit.."targettarget")
+                mText=string.gsub(mText,"hbtargettarget",button.unit.."target")
+                mText=string.gsub(mText,"hbtarget",button.unit)
+                button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+                button:SetAttribute(HB_prefix.."type"..j,"macro")
+                button:SetAttribute(HB_prefix.."macrotext"..j, mText)
+                if status=="Enabled" then
+                    HealBotButtonMacroAttribs[HB_prefix..j]=sName
                 end
             else
-                mId=GetMacroIndexByName(sName)
-                if mId ~= 0 then
-                    _,_,mText=GetMacroInfo(mId)
-         --        mUnit = button.unit
-                    if UnitExists(HealBot_UnitPet(button.unit)) then
-                        mText=string.gsub(mText,"hbtargetpet",HealBot_UnitPet(button.unit))
-                    end
-                    mText=string.gsub(mText,"hbtargettargettarget",button.unit.."targettarget")
-                    mText=string.gsub(mText,"hbtargettarget",button.unit.."target")
-                    mText=string.gsub(mText,"hbtarget",button.unit)
-                    button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
-                    button:SetAttribute(HB_prefix.."type"..j,"macro")
-                    button:SetAttribute(HB_prefix.."macrotext"..j, mText)
-                    if status=="Enabled" then
-                        HealBotButtonMacroAttribs[HB_prefix..j]=sName
-                    end
-                else
-                    button:SetAttribute(HB_prefix.."helpbutton"..j, "item"..j);
-                    button:SetAttribute(HB_prefix.."type-item"..j, "item");
-                    button:SetAttribute(HB_prefix.."item-item"..j, sName);
-                end
+                button:SetAttribute(HB_prefix.."helpbutton"..j, "item"..j);
+                button:SetAttribute(HB_prefix.."type-item"..j, "item");
+                button:SetAttribute(HB_prefix.."item-item"..j, sName);
             end
         end
-    else
-        button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
     end
+else
+    button:SetAttribute(HB_prefix.."helpbutton"..j, nil);
+end
 end
 
 function HealBot_Action_SethbFocusButtonAttrib(button)
-    button:SetAttribute("unit", "target")
-    button:SetAttribute("helpbutton1", "focus1");
-    button:SetAttribute("type1", "focus")
-    button:SetAttribute("type-focus1", "focus")
+button:SetAttribute("unit", "target")
+button:SetAttribute("helpbutton1", "focus1");
+button:SetAttribute("type1", "focus")
+button:SetAttribute("type-focus1", "focus")
 end
 
 local smName={}
 local sysSoundSFX = strsub(GetCVar("Sound_EnableSFX") or "nil",1,1)
 
 function HealBot_Action_AlterSpell2Macro(spellName, spellTar, spellTrin1, spellTrin2, unit, combo)
-    if not smName[combo..unit] then
-        smName[combo..unit]=""
-        if HealBot_Config.MacroSuppressSound==1 and sysSoundSFX=="1" then smName[combo..unit]=smName[combo..unit].."/console Sound_EnableSFX 0;\n" end
-        if HealBot_Config.MacroSuppressError==1 then smName[combo..unit]=smName[combo..unit].."/script UIErrorsFrame:Hide();\n" end
-        if spellTar==1 then smName[combo..unit]=smName[combo..unit].."/target "..unit..";\n" end
-        if spellTrin1==1 then smName[combo..unit]=smName[combo..unit].."/use 13;\n" end
-        if spellTrin2==1 then smName[combo..unit]=smName[combo..unit].."/use 14;\n" end
-        if HealBot_Config.MacroUse10==1 then smName[combo..unit]=smName[combo..unit].."/use 10;\n" end
-        if HealBot_Config.MacroSuppressError==1 then smName[combo..unit]=smName[combo..unit].."/script UIErrorsFrame:Clear(); UIErrorsFrame:Show();\n" end
-        if HealBot_Config.MacroSuppressSound==1 and sysSoundSFX=="1" then smName[combo..unit]=smName[combo..unit].."/console Sound_EnableSFX 1;\n" end
-        smName[combo..unit]=smName[combo..unit].."/cast [@"..unit.."] "..spellName..";"
-        if strlen(smName[combo..unit])>255 then
-            smName[combo..unit]=""
-            if HealBot_Config.MacroSuppressSound==1 and sysSoundSFX=="1" then smName[combo..unit]=smName[combo..unit].."/console Sound_EnableSFX 0;\n" end
-            if spellTar==1 then smName[combo..unit]=smName[combo..unit].."/target "..UnitName(unit)..";\n" end
-            if spellTrin1==1 then smName[combo..unit]=smName[combo..unit].."/use 13;\n" end
-            if spellTrin2==1 then smName[combo..unit]=smName[combo..unit].."/use 14;\n" end
-            if HealBot_Config.MacroUse10==1 then smName[combo..unit]=smName[combo..unit].."/use 10;\n" end
-            if HealBot_Config.MacroSuppressSound==1 and sysSoundSFX=="1" then smName[combo..unit]=smName[combo..unit].."/console Sound_EnableSFX 1;\n" end
-            smName[combo..unit]=smName[combo..unit].."/cast [@"..unit.."] "..spellName..";"
-            if strlen(smName[combo..unit])>255 then
-                smName[combo..unit]=""
-                if spellTar==1 then smName[combo..unit]=smName[combo..unit].."/target "..UnitName(unit)..";\n" end
-                if spellTrin1==1 then smName[combo..unit]=smName[combo..unit].."/use 13;\n" end
-                if spellTrin2==1 then smName[combo..unit]=smName[combo..unit].."/use 14;\n" end
-                if HealBot_Config.MacroUse10==1 then smName[combo..unit]=smName[combo..unit].."/use 10;\n" end
-                smName[combo..unit]=smName[combo..unit].."/cast [@"..unit.."] "..spellName..";"
-                if strlen(smName[combo..unit])>255 then
-                    smName[combo..unit]=spellName
-                end
-            end
-        end
+local spellID = HealBot_GetSpellId(spellName) or spellName
+
+if not smName[combo .. unit] then
+    smName[combo .. unit] = ""
+
+    if HealBot_Config.MacroSuppressSound == 1 and sysSoundSFX == "1" then
+        smName[combo .. unit] = smName[combo .. unit] .. "/console Sound_EnableSFX 0;\n"
     end
-    return smName[combo..unit]
+
+    if HealBot_Config.MacroSuppressError == 1 then
+        smName[combo .. unit] = smName[combo .. unit] .. "/script UIErrorsFrame:Hide();\n"
+    end
+
+    if spellTar == 1 then
+        smName[combo .. unit] = smName[combo .. unit] .. "/target " .. unit .. ";\n"
+    end
+
+    if spellTrin1 == 1 then
+        smName[combo .. unit] = smName[combo .. unit] .. "/use 13;\n"
+    end
+
+    if spellTrin2 == 1 then
+        smName[combo .. unit] = smName[combo .. unit] .. "/use 14;\n"
+    end
+
+    if HealBot_Config.MacroUse10 == 1 then
+        smName[combo .. unit] = smName[combo .. unit] .. "/use 10;\n"
+    end
+
+    if HealBot_Config.MacroSuppressError == 1 then
+        smName[combo .. unit] = smName[combo .. unit] .. "/script UIErrorsFrame:Clear(); UIErrorsFrame:Show();\n"
+    end
+
+    if HealBot_Config.MacroSuppressSound == 1 and sysSoundSFX == "1" then
+        smName[combo .. unit] = smName[combo .. unit] .. "/console Sound_EnableSFX 1;\n"
+    end
+
+    smName[combo .. unit] = smName[combo .. unit] .. "/cast [@" .. unit .. "] " .. spellID .. ";"
+end
+
+return smName[combo .. unit]
 end
 
 function HealBot_Action_hbmenuFrame_DropDown_Initialize(self,level)
