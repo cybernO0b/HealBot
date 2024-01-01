@@ -1988,6 +1988,7 @@ local setDropdown=nil
 local partyNo=nil
 local sTar, sTrin1, sTrin2=0, 0, 0
 local curGUID=nil
+
 function HealBot_Action_SetButtonAttrib(button, bbutton, bkey, status, j)
     
    
@@ -1999,38 +2000,34 @@ function HealBot_Action_SetButtonAttrib(button, bbutton, bkey, status, j)
     
     HB_combo_prefix = bkey .. bbutton .. HealBot_Config.CurrentSpec;
     
-    -- Сохраняем результат вызова функции в переменной input
+    -- Получаем информацию о заклинании
     local input = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
-    -- Костыль, необходимый для порядкового считывания переменных бинда клавиш
-    local zaglushka = nil 
+    local isSpellID = tonumber(input)
     
-    if status == "Enabled" then
-        local isSpellID = tonumber(input)
-        if isSpellID then
-            sName, sTar, sTrin1, sTrin2 = GetSpellInfo(isSpellID)
+    -- Определяем sTar, sTrin1 и sTrin2
+    if isSpellID then
+        sName = GetSpellInfo(isSpellID)
+        if status == "Enabled" then
+            sTar, sTrin1, sTrin2 = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
+        elseif status == "Disabled" then
+            sTar, sTrin1, sTrin2 = HealBot_Action_AttribDisSpellPattern(HB_combo_prefix)
         else
-            sName = input
-            local spellID = HealBot_GetSpellId(sName)
-            if spellID then
-                zaglushka, sTar, sTrin1, sTrin2 = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
-            else
-                sName, sTar, sTrin1, sTrin2 = nil, nil, nil, nil
-            end
+            sName, sTar, sTrin1, sTrin2 = nil, nil, nil, nil
         end
-    elseif status == "Disabled" then
-        local isSpellID = tonumber(input)
-        if isSpellID then
-            sName, sTar, sTrin1, sTrin2 = GetSpellInfo(isSpellID)
+    else
+        if status == "Enabled" then
+            sName, sTar, sTrin1, sTrin2 = HealBot_Action_AttribSpellPattern(HB_combo_prefix)
+        elseif status == "Disabled" then
+            sName, sTar, sTrin1, sTrin2 = HealBot_Action_AttribDisSpellPattern(HB_combo_prefix)
         else
-            sName = input
-            local spellID = HealBot_GetSpellId(sName)
-            if spellID then
-                zaglushka, sTar, sTrin1, sTrin2 = HealBot_Action_AttribDisSpellPattern(HB_combo_prefix)
-            else
-                sName, sTar, sTrin1, sTrin2 = nil, nil, nil, nil
-            end
+            sName, sTar, sTrin1, sTrin2 = nil, nil, nil, nil
         end
     end
+    
+    -- Используем сохраненные значения
+    sTar = saved_sTar or sTar
+    sTrin1 = saved_sTrin1 or sTrin1
+    sTrin2 = saved_sTrin2 or sTrin2
 if sName then
     if strlower(sName)==strlower(HEALBOT_DISABLED_TARGET) then
         button:SetAttribute(HB_prefix.."helpbutton"..j, "target"..j);
