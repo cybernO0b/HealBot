@@ -7160,15 +7160,15 @@ end
 
 local BuffWatchSpell = " "
 StaticPopupDialogs["HEALBOT_OPTIONS_BUFFNAMEDTITLE"] = {
-    text = HEALBOT_OPTIONS_BUFFNAMED .. "%s",
+    text = HEALBOT_OPTIONS_BUFFNAMED.."%s",
     button1 = ACCEPT,
     button2 = CANCEL,
-    OnShow = function()
-        g = _G[self:GetName() .. "WideEditBox"]
+    OnShow = function(self) --добавлен self
+         g = _G[self:GetName().."WideEditBox"]
         g:SetText(HealBot_GuessName())
     end,
-    OnAccept = function()
-        g = _G[self:GetParent():GetName() .. "WideEditBox"]
+    OnAccept = function(self) --добавлен self
+         g = _G[self:GetName().."WideEditBox"] --удален GetParent()
         HealBot_Options_Set_BuffWatchGUID(g:GetText())
     end,
     OnCancel = function()
